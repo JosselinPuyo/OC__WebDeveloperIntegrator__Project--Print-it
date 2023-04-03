@@ -19,10 +19,10 @@ const slides = [
 
 //EventListeners prev & next
 const previous = document.querySelector("#previous");
-previous.addEventListener("click", () => alert());
+previous.addEventListener("click", () => slideChange(-1));
 
 const next = document.querySelector("#next");
-next.addEventListener("click", () => alert());
+next.addEventListener("click", () => slideChange(1));
 
 //Bullet points 
 const dots = document.querySelector("#dots");
@@ -36,3 +36,12 @@ for (let i = 0; i < slides.length; i++) {
 let slideNumber = 0;
 
 dots.children[slideNumber].classList.add("dot_selected");
+
+// Function slide 
+function slideChange(direction) {
+	slideNumber = slideNumber + direction;
+	if (slideNumber < 0) slideNumber = slides.length - 1;
+	if (slideNumber > slides.length - 1) slideNumber = 0;
+	document.getElementById("banner__img").src = "./assets/images/slideshow/" + slides[slideNumber].image;
+	document.getElementById("banner__text").innerHTML = slides[slideNumber].tagLine;
+}
