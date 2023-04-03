@@ -37,6 +37,12 @@ let slideNumber = 0;
 
 dots.children[slideNumber].classList.add("dot_selected");
 
+function slideActive(slideNumber) {
+	return dots.children[slideNumber];
+}
+
+let dotActive = slideActive(slideNumber);
+
 // Function slide 
 function slideChange(direction) {
 	slideNumber = slideNumber + direction;
@@ -44,4 +50,7 @@ function slideChange(direction) {
 	if (slideNumber > slides.length - 1) slideNumber = 0;
 	document.getElementById("banner__img").src = "./assets/images/slideshow/" + slides[slideNumber].image;
 	document.getElementById("banner__text").innerHTML = slides[slideNumber].tagLine;
+	dotActive.classList.remove("dot_selected");
+	dotActive = slideActive(slideNumber);
+	dotActive.classList.add("dot_selected");
 }
