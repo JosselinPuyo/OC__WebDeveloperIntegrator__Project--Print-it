@@ -28,7 +28,7 @@ next.addEventListener("click", () => slideChange(1));
 const dots = document.querySelector("#dots");
 
 for (let i = 0; i < slides.length; i++) {
-	const dot = document.createElement("element");
+	const dot = document.createElement("div");
 	dot.classList.add("dot");
 	dots.appendChild(dot);
 }
