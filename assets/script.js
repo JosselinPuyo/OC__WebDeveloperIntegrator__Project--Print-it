@@ -32,3 +32,7 @@ for (let i = 0; i < slides.length; i++) {
 	dot.classList.add("dot");
 	dots.appendChild(dot);
 }
+
+let slideNumber = 0;
+
+dots.children[slideNumber].classList.add("dot_selected");
