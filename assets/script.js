@@ -23,3 +23,12 @@ previous.addEventListener("click", () => alert());
 
 const next = document.querySelector("#next");
 next.addEventListener("click", () => alert());
+
+//Bullet points 
+const dots = document.querySelector("#dots");
+
+for (let i = 0; i < slides.length; i++) {
+	const dot = document.createElement("element");
+	dot.classList.add("dot");
+	dots.appendChild(dot);
+}
